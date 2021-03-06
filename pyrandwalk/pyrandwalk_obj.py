@@ -82,7 +82,7 @@ class RandomWalk():
 
         :return: list of color strs.
         """
-        graph = self.get_comun_graph()
+        graph = self.get_graph()
         colormap = ['blue' for _ in graph]
         for i, node in enumerate(graph):
             if graph.has_edge(node, node):
@@ -106,16 +106,21 @@ class RandomWalk():
         plt.show()
 
 
-    def get_commun_classes(self):
-        cls_list = [x for x in nx.strongly_connected_components(self.get_comun_graph())]
-        cls_dict= dict()
-        for cls in cls_list:
-            cls = list(cls)
-            idx = [self.states.index(c) for c in cls]
+    def get_typeof_classes(self):
+        """
+        Return classes separated according to thier types.
+
+        :return: dictionary consisting of classes and their types
+        """
+        class_list = nx.strongly_connected_components(self.get_graph())
+        class_dict = {}
+        for class_ in class_list:
+            class_ = list(class_)
+            idx = [self.S.index(c) for c in class_]
             sub_trans = np.take(np.take(self.P, idx, axis=0), idx, axis =1)
             is_recurrent = np.all(sub_trans.sum(axis =1 )==1)
             if is_recurrent: 
-                cls_dict['recurrent'] = [cls, sub_trans]
+                class_dict['recurrent'] = [class_, sub_trans]
             else: 
-                cls_dict['transient'] = [cls, sub_trans]
-        return cls_dict
+                class_dict['transient'] = [class_, sub_trans]
+        return class_dict
