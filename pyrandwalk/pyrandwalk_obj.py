@@ -90,11 +90,19 @@ class RandomWalk():
         return colormap
 
 
-    def plot_comm_graph(self):
-        color_map = self.color_map()
+    def plot_graph(self):
+        """
+        Plot graph associated with random walk.
+
+        :return: None
+        """
+        colormap = self.get_colormap()
         plt.style.use('seaborn')
         plt.subplot(111)
-        nx.draw_circular(self.get_comun_graph(), node_color = color_map ,  with_labels=True, font_weight='bold')
+        nx.draw_circular(self.get_graph(),
+                         node_color=colormap,
+                         with_labels=True,
+                         font_weight='bold')
         plt.show()
 
 
