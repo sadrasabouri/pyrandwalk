@@ -30,18 +30,18 @@ class RandomWalk():
         self.P = np.array(transitions)
 
 
-    def get_edge(self):
+    def get_edges(self):
         """
-        Return weighted edges of random walk.
+        Return none-zero weighted edges of random walk.
 
         :return: list of tuples consisting of from_node, to_node and weight
         """
-        ads = []
+        edges = []
         for i in self.S:
             for j in self.S:
                 if self.P[i,j] > 0:
-                    ads.append((i, j, self.P[i,j]))
-        return ads
+                    edges.append((i, j, self.P[i,j]))
+        return edges
 
 
     def trans_power(self, n):
@@ -57,7 +57,7 @@ class RandomWalk():
 
     def get_comun_graph(self):
         DG = nx.DiGraph()
-        DG.add_weighted_edges_from(self.get_edge())
+        DG.add_weighted_edges_from(self.get_edges())
         return DG
 
 
