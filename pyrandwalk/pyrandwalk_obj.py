@@ -75,15 +75,19 @@ class RandomWalk():
         return graph
 
 
-    def color_map(self):
-        DG = self.get_comun_graph()
-        color_map = []
-        for node in DG:
-            if DG.has_edge(node , node):
-                color_map.append('red')
-            else: 
-                color_map.append('blue')
-        return color_map
+    def get_colormap(self):
+        """
+        Return graph node color map.
+        A node is red iff it has a ring edge.
+
+        :return: list of color strs.
+        """
+        graph = self.get_comun_graph()
+        colormap = ['blue' for _ in graph]
+        for i, node in enumerate(graph):
+            if graph.has_edge(node, node):
+                colormap[i] = 'red'
+        return colormap
 
 
     def plot_comm_graph(self):
