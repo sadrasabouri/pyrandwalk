@@ -1,13 +1,20 @@
 # -*- coding: utf-8 -*-
-"""Pyrandwalk module."""
+"""Random Walk module."""
 import numpy as np
 from numpy import linalg as la
 import networkx as nx
 import matplotlib.pyplot as plt
 
-class pyrandwalk: 
+class RandomWalk():
     """
-    Pyrandwalk class.
+    Random Walk class.
+    >>> states = [0, 1, 2, 3, 4]
+    >>> trans = np.array([[1,    0, 0,    0, 0],
+                          [0.25, 0, 0.75, 0, 0],
+                          [0, 0.25, 0, 0.75, 0],
+                          [0, 0, 0.25, 0, 0.75],
+                          [0, 0,    0, 1,    0]])
+    >>> rw = RandomWalk(states, trans)
     """
 
     def __init__(self, states, transitions):
@@ -20,7 +27,7 @@ class pyrandwalk:
         :type transitions: np.array
         """
         self.S = states
-        self.P = transitions
+        self.P = np.array(transitions)
 
 
     def get_edge(self):
