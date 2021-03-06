@@ -55,10 +55,15 @@ class RandomWalk():
         return la.matrix_power(self.P, n)
 
 
-    def get_comun_graph(self):
-        DG = nx.DiGraph()
-        DG.add_weighted_edges_from(self.get_edges())
-        return DG
+    def get_graph(self):
+        """
+        Return directional graph generated from random walk.
+
+        :return: directional weighted graph as networkx.DiGraph
+        """
+        graph = nx.DiGraph()
+        graph.add_weighted_edges_from(self.get_edges())
+        return graph
 
 
     def color_map(self):
