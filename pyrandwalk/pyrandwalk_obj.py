@@ -30,6 +30,26 @@ class RandomWalk():
         self.P = np.array(transitions)
 
 
+    def is_ireducible(self):
+        """
+        Return true if stochastic process associated with random walk is ireducible.
+
+        :return: a bool which is true when the process is ireducible
+        """
+        return nx.is_strongly_connected(self.get_graph())
+
+
+    def trans_power(self, n):
+        """
+        Return n'th power of transition matrix.
+
+        :param n: power of desired matrix
+        :type n: int
+        :return: n'th power of transition matrix 
+        """
+        return la.matrix_power(self.P, n)
+
+
     def get_edges(self):
         """
         Return none-zero weighted edges of random walk.
@@ -42,17 +62,6 @@ class RandomWalk():
                 if self.P[i,j] > 0:
                     edges.append((i, j, self.P[i,j]))
         return edges
-
-
-    def trans_power(self, n):
-        """
-        Return n'th power of transition matrix.
-
-        :param n: power of desired matrix
-        :type n: int
-        :return: n'th power of transition matrix 
-        """
-        return la.matrix_power(self.P, n)
 
 
     def get_graph(self):
@@ -83,10 +92,6 @@ class RandomWalk():
         plt.subplot(111)
         nx.draw_circular(self.get_comun_graph(), node_color = color_map ,  with_labels=True, font_weight='bold')
         plt.show()
-
-
-    def is_ireducible(self):
-        return nx.is_strongly_connected(self.get_comun_graph())
 
 
     def get_commun_classes(self):
