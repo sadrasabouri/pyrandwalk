@@ -30,6 +30,27 @@ class RandomWalk():
         self.P = np.array(transitions)
 
 
+    def prob_sec(self, sequence, initial_dist=None):
+        """
+        Calculate probability of given sequence.
+
+        :param sequence: given sequence of states
+        :type sequence: list / np.array
+        :param initial_dist: initial probability disturbition of states
+        :type initial_dist: dict
+        :return: probability of given sequence of states happening
+        """
+        if initial_dist == None:
+            initial_dist = {state : 1 / len(self.S) for state in self.S}
+        current_state = sequence[0]
+        probability = initial_dist[current_state]
+        for next_state in sequence[1:]:
+            probability *= self.P[self.S.index(current_state),
+                                  self.S.index(next_state)]
+            current_state = next_state
+        return probability
+
+
     def is_ireducible(self):
         """
         Return true if stochastic process associated with random walk is ireducible.
