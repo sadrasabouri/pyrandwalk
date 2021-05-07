@@ -60,6 +60,10 @@ Random walk is a representation of discrete-time, discrete-value Markov chain mo
 ...                   [0, 0, 0.25, 0, 0.75],
 ...                   [0, 0,    0, 1,    0]])
 >>> rw = RandomWalk(states, trans)
+```
+We are simulating random walks on above graph (weights are probabilities):
+<img src="https://github.com/sadrasabouri/pyrandwalk/raw/master/Otherfiles/usage_example.webp">
+```pycon
 >>> rw.prob_sec([2, 1, 0])
 0.0125
 >>> rw.prob_sec([2, 1, 0], initial_dist=[0, 0, 1, 0, 0])
