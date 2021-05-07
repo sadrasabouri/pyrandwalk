@@ -171,7 +171,7 @@ class RandomWalk():
             sub_trans = np.take(np.take(self.P, idx, axis=0), idx, axis=1)
             is_recurrent = np.all(sub_trans.sum(axis=1) == 1)
             if is_recurrent:
-                class_dict['recurrent'] = [class_, sub_trans]
+                class_dict['recurrent'] = (class_, sub_trans)
             else:
-                class_dict['transient'] = [class_, sub_trans]
+                class_dict['transient'] = (class_, sub_trans)
         return class_dict
