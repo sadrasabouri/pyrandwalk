@@ -38,11 +38,11 @@ class RandomWalk():
         :param sequence: given sequence of states
         :type sequence: list / np.array
         :param initial_dist: initial probability disturbition of states
-        :type initial_dist: dict
+        :type initial_dist: list
         :return: probability of given sequence of states happening
         """
         if initial_dist is None:
-            initial_dist = {state: 1 / len(self.S) for state in self.S}
+            initial_dist = [1 / len(self.S)] * len(self.S)
         current_state = sequence[0]
         probability = initial_dist[current_state]
         for next_state in sequence[1:]:
