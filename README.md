@@ -68,7 +68,7 @@ We are simulating random walks on the above graph (weights are probabilities):
 ### Probability of A Sequence
 
 Imagine you want to calculate probability which you start from state 2, go to state 1 and stuck in state 0.
-What's the probability of these walk sequence1?
+What's the probability of these walk sequences?
 ```pycon
 >>> rw.prob_sec([2, 1, 0])
 0.0125
