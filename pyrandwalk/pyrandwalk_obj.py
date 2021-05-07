@@ -91,6 +91,20 @@ class RandomWalk():
         """
         return la.matrix_power(self.P, n)
 
+
+    def get_final_probs(self):
+        """
+        Return final probability of each state in a vector.
+
+        :return: final probability as a numpy array
+        """
+        if not self.is_ireducible():
+            return None
+        v, V = la.eig(self.P.T)
+        pi = V.T[v == 1]
+        return pi / np.sum(pi)
+
+
     def get_edges(self):
         """
         Return none-zero weighted edges of random walk.
