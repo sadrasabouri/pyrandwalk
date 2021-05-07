@@ -1,0 +1,9 @@
+[run]
+branch = True
+omit =
+    */pyrandwalk/__main__.py
+    */pyrandwalk/__init__.py
+	*/pyrandwalk/pyrandwalk_test.py
+[report]
+exclude_lines =
+    pragma: no cover
