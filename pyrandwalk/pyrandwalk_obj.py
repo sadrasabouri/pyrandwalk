@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 class RandomWalk():
     """
     Random Walk class.
+
     >>> states = [0, 1, 2, 3, 4]
     >>> trans = np.array([[1,    0, 0,    0, 0],
                           [0.25, 0, 0.75, 0, 0],
@@ -130,8 +131,7 @@ class RandomWalk():
 
     def get_colormap(self):
         """
-        Return graph node color map.
-        A node is red iff it has a ring edge.
+        Return graph node color map.A node is red iff it has a ring edge.
 
         :return: list of color strings.
         """
