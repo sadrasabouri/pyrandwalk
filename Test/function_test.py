@@ -74,9 +74,14 @@ array([[1.    , 0.    , 0.    , 0.    , 0.    ],
 >>> rw_graph = rw.get_graph()
 >>> rw.get_colormap()
 ['red', 'blue', 'blue', 'blue', 'blue']
->>> rw.get_typeof_classes()
-{'recurrent': [[0], array([[1.]])], 'transient': [[1, 2, 3, 4], array([[0.  , 0.75, 0.  , 0.  ],
+>>> rw_class_types = rw.get_typeof_classes()
+>>> rw_class_types['recurrent']
+([0], array([[1.]]))
+>>> rw_class_types['transient'][0]
+[1, 2, 3, 4]
+>>> rw_class_types['transient'][1]
+array([[0.  , 0.75, 0.  , 0.  ],
        [0.25, 0.  , 0.75, 0.  ],
        [0.  , 0.25, 0.  , 0.75],
-       [0.  , 0.  , 1.  , 0.  ]])]}
+       [0.  , 0.  , 1.  , 0.  ]])
 """
