@@ -51,22 +51,22 @@ class RandomWalk():
         return probability
 
 
-    def is_ireducible(self):
+    def is_irreducible(self):
         """
-        Return true if stochastic process associated with random walk is ireducible.
+        Return true if stochastic process associated with random walk is irreducible.
 
-        :return: a bool which is true when the process is ireducible
+        :return: a bool which is true when the process is irreducible
         """
         return nx.is_strongly_connected(self.get_graph())
 
 
     def trans_power(self, n):
         """
-        Return n'th power of transition matrix.
+        Return nth power of transition matrix.
 
         :param n: power of desired matrix
         :type n: int
-        :return: n'th power of transition matrix 
+        :return: nth power of transition matrix 
         """
         return la.matrix_power(self.P, n)
 
@@ -101,7 +101,7 @@ class RandomWalk():
         Return graph node color map.
         A node is red iff it has a ring edge.
 
-        :return: list of color strs.
+        :return: list of color strings.
         """
         graph = self.get_graph()
         colormap = ['blue' for _ in graph]
@@ -129,7 +129,7 @@ class RandomWalk():
 
     def get_typeof_classes(self):
         """
-        Return classes separated according to thier types.
+        Return classes separated according to their types.
 
         :return: dictionary consisting of classes and their types
         """
