@@ -5,6 +5,7 @@ from numpy import linalg as la
 import networkx as nx
 import matplotlib.pyplot as plt
 
+
 class RandomWalk():
     """
     Random Walk class.
@@ -29,7 +30,6 @@ class RandomWalk():
         self.S = states
         self.P = np.array(transitions)
 
-
     def prob_sec(self, sequence, initial_dist=None):
         """
         Calculate probability of given sequence.
@@ -40,8 +40,8 @@ class RandomWalk():
         :type initial_dist: dict
         :return: probability of given sequence of states happening
         """
-        if initial_dist == None:
-            initial_dist = {state : 1 / len(self.S) for state in self.S}
+        if initial_dist is None:
+            initial_dist = {state: 1 / len(self.S) for state in self.S}
         current_state = sequence[0]
         probability = initial_dist[current_state]
         for next_state in sequence[1:]:
@@ -49,7 +49,6 @@ class RandomWalk():
                                   self.S.index(next_state)]
             current_state = next_state
         return probability
-
 
     def is_irreducible(self):
         """
@@ -59,17 +58,15 @@ class RandomWalk():
         """
         return nx.is_strongly_connected(self.get_graph())
 
-
     def trans_power(self, n):
         """
         Return nth power of transition matrix.
 
         :param n: power of desired matrix
         :type n: int
-        :return: nth power of transition matrix 
+        :return: nth power of transition matrix
         """
         return la.matrix_power(self.P, n)
-
 
     def get_edges(self):
         """
@@ -80,10 +77,9 @@ class RandomWalk():
         edges = []
         for i in self.S:
             for j in self.S:
-                if self.P[i,j] > 0:
-                    edges.append((i, j, self.P[i,j]))
+                if self.P[i, j] > 0:
+                    edges.append((i, j, self.P[i, j]))
         return edges
-
 
     def get_graph(self):
         """
@@ -94,7 +90,6 @@ class RandomWalk():
         graph = nx.DiGraph()
         graph.add_weighted_edges_from(self.get_edges())
         return graph
-
 
     def get_colormap(self):
         """
@@ -109,7 +104,6 @@ class RandomWalk():
             if graph.has_edge(node, node):
                 colormap[i] = 'red'
         return colormap
-
 
     def plot_graph(self):
         """
@@ -126,7 +120,6 @@ class RandomWalk():
                          font_weight='bold')
         plt.show()
 
-
     def get_typeof_classes(self):
         """
         Return classes separated according to their types.
@@ -138,10 +131,10 @@ class RandomWalk():
         for class_ in class_list:
             class_ = list(class_)
             idx = [self.S.index(c) for c in class_]
-            sub_trans = np.take(np.take(self.P, idx, axis=0), idx, axis =1)
-            is_recurrent = np.all(sub_trans.sum(axis =1 )==1)
-            if is_recurrent: 
+            sub_trans = np.take(np.take(self.P, idx, axis=0), idx, axis=1)
+            is_recurrent = np.all(sub_trans.sum(axis=1) == 1)
+            if is_recurrent:
                 class_dict['recurrent'] = [class_, sub_trans]
-            else: 
+            else:
                 class_dict['transient'] = [class_, sub_trans]
         return class_dict
