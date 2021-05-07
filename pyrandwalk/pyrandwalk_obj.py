@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Random Walk module."""
+from pyrandwalk.pyrandwalk_param import *
 import numpy as np
 from numpy import linalg as la
 import networkx as nx
@@ -49,6 +50,28 @@ class RandomWalk():
                                   self.S.index(next_state)]
             current_state = next_state
         return probability
+
+    def run(self, ntimes=10, show=False):
+        """
+        Run random walk for ntimes and print out result on each transition.
+
+        :param ntimes: numbers of running
+        :type ntimes: int
+        :param show: flag which is set when showing run is desired
+        :return: (generated_states, probability)
+        """
+        state = np.random.choice(self.S)
+        states = [state]
+        probabilities = [1 / len(self.S)]
+        for i in range(ntimes):
+            next_state = np.random.choice(self.S, p=self.P[state])
+            probability = self.P[state, next_state]
+            states.append(next_state)
+            probabilities.append(probability)
+            if show is True:
+                print(RUN_PRINT.format(state, next_state, probability))
+            state = next_state
+        return states, probabilities
 
     def is_irreducible(self):
         """
