@@ -1,8 +1,14 @@
 # pyrandwalk
 Python Library for Random Walks.
 
-<img src="https://github.com/sadrasabouri/pyrandwalk/raw/master/Otherfiles/logo.png" alt="pyrandwalk-logo">
-
+<div align="center">
+<img src="https://github.com/sadrasabouri/pyrandwalk/raw/master/Otherfiles/logo.png" alt="pyrandwalk-logo"><br/>
+<br/>
+<a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3" /></a>
+<a href="https://codecov.io/gh/sadrasabouri/pyrandwalk">
+  <img src="https://codecov.io/gh/sadrasabouri/pyrandwalk/branch/master/graph/badge.svg" />
+</a>
+</div>
 ----------
 ## Table of contents					
    * [Overview](https://github.com/sadrasabouri/pyrandwalk#overview)
