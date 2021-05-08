@@ -1,5 +1,5 @@
 # pyrandwalk
-Python Library for Random Walks.
+:walking: Python Library for Random Walks.
 
 <div align="center">
 <img src="https://github.com/sadrasabouri/pyrandwalk/raw/master/Otherfiles/logo.png" alt="pyrandwalk-logo"><br/>
