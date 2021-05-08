@@ -1,6 +1,8 @@
 # pyrandwalk
 Python Library for Random Walks.
 
+<img src="https://github.com/sadrasabouri/pyrandwalk/raw/master/Otherfiles/logo.png" alt="pyrandwalk-logo">
+
 ----------
 ## Table of contents					
    * [Overview](https://github.com/sadrasabouri/pyrandwalk#overview)
@@ -220,4 +222,4 @@ array([[0.  , 0.75, 0.  , 0.  ],
 
 <blockquote>1- Gregory F.Lawler, "Introduction to Stochastic Processes".</blockquote>
 <blockquote>2- [Markusfeng](https://markusfeng.com/projects/graph/), "Graph / Finite State Machine Designer".</blockquote>
-
+<div>Icon made by <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
