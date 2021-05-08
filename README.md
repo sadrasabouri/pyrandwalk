@@ -9,6 +9,7 @@ Python Library for Random Walks.
   <img src="https://codecov.io/gh/sadrasabouri/pyrandwalk/branch/master/graph/badge.svg" />
 </a>
 </div>
+
 ----------
 ## Table of contents					
    * [Overview](https://github.com/sadrasabouri/pyrandwalk#overview)
