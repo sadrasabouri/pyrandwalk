@@ -2,7 +2,7 @@
 :walking: Python Library for Random Walks.
 
 <div align="center">
-<img src="https://github.com/sadrasabouri/pyrandwalk/raw/master/Otherfiles/logo.png" alt="pyrandwalk-logo"><br/>
+<img src="https://github.com/sadrasabouri/pyrandwalk/raw/master/Otherfiles/logo.png" width="400" height="400" alt="pyrandwalk-logo"><br/>
 <br/>
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3" /></a>
 <a href="https://codecov.io/gh/sadrasabouri/pyrandwalk">
