@@ -30,10 +30,10 @@ class RandomWalk():
         :param transitions: matrix of transitions
         :type transitions: np.array
         """
-        if not isinstance(states, (list, type(np.array([])))):
+        if not is_valid_vector_type(states):
             raise pyrandwalkStateError(INVALID_STATE_TYPE_ERROR)
         self.S = states
-        if not isinstance(transitions, (list, type(np.array([])))):
+        if not is_valid_vector_type(transitions):
             raise pyrandwalkTransitionsError(INVALID_TRANSITIONS_TYPE_ERROR)
         if np.shape(transitions) != (len(states), len(states)):
             raise pyrandwalkTransitionsError(TRANSITIONS_SIZE_ERROR)

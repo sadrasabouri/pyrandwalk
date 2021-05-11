@@ -35,3 +35,14 @@ def is_prob_dist(dist):
     if np.sum(dist) != 1:
         return False
     return True
+
+
+def is_valid_vector_type(vector):
+    """
+    Check if given vector is a valid one.
+
+    :param vector: given vector
+    :type vector: anything
+    :return: True if vector is list or numpy array
+    """
+    return isinstance(vector, (list, type(np.array([]))))

@@ -103,4 +103,10 @@ True
 False
 >>> is_prob_dist([1/3, -1/3, -1/3])
 False
+>>> is_valid_vector_type([1, 2, 3])
+True
+>>> is_valid_vector_type(np.array([1, 2, 3]))
+True
+>>> is_valid_vector_type(1)
+False
 """
