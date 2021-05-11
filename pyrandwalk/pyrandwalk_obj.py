@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 """Random Walk module."""
-from pyrandwalk.pyrandwalk_param import *
+from .pyrandwalk_param import *
 import numpy as np
 from numpy import linalg as la
 import networkx as nx
-import matplotlib.pyplot as plt
 
 
 class RandomWalk():
@@ -132,8 +131,9 @@ class RandomWalk():
         """
         Plot graph associated with random walk.
 
-        :return: None
+        :return: generated plot
         """
+        import matplotlib.pyplot as plt
         colormap = self.get_colormap()
         plt.style.use('seaborn')
         plt.subplot(111)
@@ -141,7 +141,7 @@ class RandomWalk():
                          node_color=colormap,
                          with_labels=True,
                          font_weight='bold')
-        plt.show()
+        return plt
 
     def get_typeof_classes(self):
         """
