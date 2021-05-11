@@ -127,21 +127,26 @@ class RandomWalk():
                 colormap[i] = 'red'
         return colormap
 
-    def plot_graph(self):
+    def plot_graph(self, suptitle="Graph", title="My Random Walk Graph"):
         """
         Plot graph associated with random walk.
 
+        :param suptitle: figure suptitle
+        :type suptitle: string
+        :param title: figure title
+        :type title: string
         :return: generated plot
         """
         import matplotlib.pyplot as plt
         colormap = self.get_colormap()
-        plt.style.use('seaborn')
-        plt.subplot(111)
+        fig, ax = plt.subplots()
+        fig.canvas.set_window_title(suptitle)
+        ax.set_title(title)
         nx.draw_circular(self.get_graph(),
                          node_color=colormap,
                          with_labels=True,
                          font_weight='bold')
-        return plt
+        return ax
 
     def get_typeof_classes(self):
         """
