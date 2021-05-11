@@ -4,7 +4,7 @@
 <div align="center">
 <img src="https://github.com/sadrasabouri/pyrandwalk/raw/master/Otherfiles/logo.png" width="300" height="300" alt="pyrandwalk-logo"><br/>
 <br/>
-<h1>pyrandwalk: :walking:Python Library for Random Walks.</h1>
+<h1>:walking:Python Library for Random Walks.</h1>
 
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3" /></a>
 <a href="https://codecov.io/gh/sadrasabouri/pyrandwalk">
