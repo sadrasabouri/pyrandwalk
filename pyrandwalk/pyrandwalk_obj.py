@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Random Walk module."""
 from .pyrandwalk_param import *
+from .pyrandwalk_util import *
 import numpy as np
 from numpy import linalg as la
 import networkx as nx
@@ -73,17 +74,18 @@ class RandomWalk():
             state = next_state
         return states, probabilities
 
-    def final_dist(self):
+    def final_dist(self, precision=10**(-10)):
         """
         Return final probability distribution of the random walk.
 
+        :param precision: shows the min threshold of probabilies
+        :type precision: float
         :return: final distribution as np.array
         """
         v, Q = la.eig(self.P)
         Q = Q[:, v.argsort()[::-1]]
         final_probs = la.inv(Q)[0,:]
-        final_probs = final_probs / np.sum(final_probs)
-        return final_probs
+        return make_prob_dist(final_probs, precision=precision)
 
     def is_irreducible(self):
         """
