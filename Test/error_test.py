@@ -15,4 +15,8 @@ pyrandwalk.pyrandwalk_error.pyrandwalkTransitionsError: Invalid type for transit
 Traceback (most recent call last):
         ...
 pyrandwalk.pyrandwalk_error.pyrandwalkTransitionsError: Transition matrix size should be (STATES_SIZE, STATES_SIZE).
+>>> rw = RandomWalk(['State0', 'State1', 'State2'], trans)
+Traceback (most recent call last):
+        ...
+pyrandwalk.pyrandwalk_error.pyrandwalkTransitionsError: Row 0 of transition matrix ([1, 2, 3]) is not a probability distribution.
 """

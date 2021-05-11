@@ -7,6 +7,7 @@ class pyrandwalkStateError(Exception):
 
     pass
 
+
 class pyrandwalkTransitionsError(Exception):
     """Transitions matrix error class."""
 
