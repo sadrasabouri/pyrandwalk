@@ -73,6 +73,18 @@ class RandomWalk():
             state = next_state
         return states, probabilities
 
+    def final_dist(self):
+        """
+        Return final probability distribution of the random walk.
+
+        :return: final distribution as np.array
+        """
+        v, Q = la.eig(self.P)
+        Q = Q[:, v.argsort()[::-1]]
+        final_probs = la.inv(Q)[0,:]
+        final_probs = final_probs / np.sum(final_probs)
+        return final_probs
+
     def is_irreducible(self):
         """
         Return true if stochastic process associated with random walk is irreducible.
