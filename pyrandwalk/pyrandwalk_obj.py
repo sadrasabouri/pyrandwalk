@@ -84,7 +84,7 @@ class RandomWalk():
         """
         v, Q = la.eig(self.P)
         Q = Q[:, v.argsort()[::-1]]
-        final_probs = la.inv(Q)[0,:]
+        final_probs = la.inv(Q)[0, :]
         return make_prob_dist(final_probs, precision=precision)
 
     def is_irreducible(self):
