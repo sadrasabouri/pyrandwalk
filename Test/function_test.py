@@ -93,4 +93,14 @@ array([0.2, 0.4, 0.4])
 array([9.97008973e-04, 9.97008973e-01, 1.99401795e-03])
 >>> make_prob_dist([1, 1000, 2], precision=10**(-2))
 array([0., 1., 0.])
+>>> is_prob_dist([1, 2, 3])
+False
+>>> is_prob_dist([0.5, 0.25, 0.25])
+True
+>>> is_prob_dist([1/3, 1/3, 1/3])
+True
+>>> is_prob_dist([1/3, -1/3, 1/3])
+False
+>>> is_prob_dist([1/3, -1/3, -1/3])
+False
 """
