@@ -112,8 +112,9 @@ class RandomWalk():
         :return: list of tuples consisting of from_node, to_node and weight
         """
         edges = []
-        for i in self.S:
-            for j in self.S:
+        state_idx = range(len(self.S))
+        for i in state_idx:
+            for j in state_idx:
                 if self.P[i, j] > 0:
                     edges.append((i, j, self.P[i, j]))
         return edges
