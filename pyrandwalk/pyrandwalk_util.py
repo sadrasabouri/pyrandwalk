@@ -11,6 +11,7 @@ def make_prob_dist(dist, precision=10*(-10)):
     :type precision: float
     :return: a np.array giving the probability disterbution
     """
+    dist = np.array(dist)
     final_dist = dist / np.sum(dist)
     zero_probe_idx = final_dist < precision
     final_dist[zero_probe_idx] = 0
