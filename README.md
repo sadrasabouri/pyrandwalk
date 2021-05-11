@@ -158,6 +158,16 @@ And if you want to see what's going on down there during the simulation you can 
 [0.2, 0.75, 0.75, 0.75, 1.0, 0.75, 1.0, 0.75, 1.0, 0.75, 1.0, 0.75, 1.0, 0.75, 1.0, 0.25, 0.25, 0.75, 0.75, 0.75, 1.0, 0.75, 1.0, 0.75, 1.0, 0.75, 1.0, 0.75, 1.0, 0.25, 0.75]
 ```
 
+
+### Final Probability Distribution
+
+You can easily find out the final probability distribution of you random walk by:
+```pycon
+>>> rw.final_dist()
+array([1., 0., 0., 0., 0.])
+```
+Which implies that the walk will in state `0` for sure as time goes on.
+
 ### Is it irreducible?
 
 You can check if your Markov chain is irreducible to lower rank ones or not by:
