@@ -52,7 +52,7 @@ class RandomWalk():
         if initial_dist is None:
             initial_dist = [1 / len(self.S)] * len(self.S)
         current_state = sequence[0]
-        probability = initial_dist[current_state]
+        probability = initial_dist[self.S.index(current_state)]
         for next_state in sequence[1:]:
             probability *= self.P[self.S.index(current_state),
                                   self.S.index(next_state)]
