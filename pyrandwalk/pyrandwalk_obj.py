@@ -2,6 +2,7 @@
 """Random Walk module."""
 from .pyrandwalk_param import *
 from .pyrandwalk_util import *
+from .pyrandwalk_error import pyrandwalkStateError, pyrandwalkTransitionsError
 import numpy as np
 from numpy import linalg as la
 import networkx as nx
@@ -25,11 +26,15 @@ class RandomWalk():
         Init method.
 
         :param states: list of states of random walk
-        :type states: list
+        :type states: list or np.array
         :param transitions: matrix of transitions
         :type transitions: np.array
         """
+        if not isinstance(states, (list, type(np.array([])))):
+            raise pyrandwalkStateError(INVALID_STATE_TYPE_ERROR)
         self.S = states
+        if not isinstance(transitions, (list, type(np.array([])))):
+            raise pyrandwalkTransitionsError(INVALID_TRANSITIONS_TYPE_ERROR)
         self.P = np.array(transitions)
 
     def prob_sec(self, sequence, initial_dist=None):
