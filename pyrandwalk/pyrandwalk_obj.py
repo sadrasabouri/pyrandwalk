@@ -2,7 +2,7 @@
 """Random Walk module."""
 from .pyrandwalk_param import *
 from .pyrandwalk_util import *
-from .pyrandwalk_error import pyrandwalkStateError, pyrandwalkTransitionsError
+from .pyrandwalk_error import pyrandwalkStateError, pyrandwalkTransitionsError, pyrandwalkVectorError
 import numpy as np
 from numpy import linalg as la
 import networkx as nx
@@ -53,8 +53,12 @@ class RandomWalk():
         :type initial_dist: list
         :return: probability of given sequence of states happening
         """
+        if not is_valid_vector_type(sequence):
+            raise pyrandwalkVectorError(INVALID_SEQUENCE_TYPE_ERROR)
         if initial_dist is None:
             initial_dist = [1 / len(self.S)] * len(self.S)
+        if not is_valid_vector_type(initial_dist):
+            raise pyrandwalkVectorError(INVALID_INITDIST_TYPE_ERROR)
         current_state = sequence[0]
         probability = initial_dist[self.S.index(current_state)]
         for next_state in sequence[1:]:
