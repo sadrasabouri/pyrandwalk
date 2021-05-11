@@ -35,6 +35,8 @@ class RandomWalk():
         self.S = states
         if not isinstance(transitions, (list, type(np.array([])))):
             raise pyrandwalkTransitionsError(INVALID_TRANSITIONS_TYPE_ERROR)
+        if np.shape(transitions) != (len(states), len(states)):
+            raise pyrandwalkTransitionsError(TRANSITIONS_SIZE_ERROR)
         self.P = np.array(transitions)
 
     def prob_sec(self, sequence, initial_dist=None):
