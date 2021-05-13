@@ -97,9 +97,9 @@ class RandomWalk():
         :type precision: float
         :return: final distribution as np.array
         """
-        v, Q = la.eig(self.P)
-        Q = Q[:, v.argsort()[::-1]]
-        final_probs = la.inv(Q)[0, :]
+        v, Q = la.eig(self.P.T)
+        final_probs = Q[:, np.argwhere(v==1)]
+        final_probs = np.squeeze(final_probs.T)
         return make_prob_dist(final_probs, precision=precision)
 
     def is_irreducible(self):
