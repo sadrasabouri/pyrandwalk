@@ -45,4 +45,4 @@ def is_valid_vector_type(vector):
     :type vector: anything
     :return: True if vector is list or numpy array
     """
-    return isinstance(vector, (list, type(np.array([]))))
+    return isinstance(vector, (list, np.ndarray))
