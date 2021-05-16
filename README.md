@@ -20,7 +20,7 @@
    * [Contribution](https://github.com/sadrasabouri/pyrandwalk/blob/master/.github/CONTRIBUTING.md)
    * [References](https://github.com/sadrasabouri/pyrandwalk#references)
    * [Authors](https://github.com/sadrasabouri/pyrandwalk/blob/master/AUTHORS.md)
-   * [Changelog](https://github.com/sepandhaghighi/pycm/blob/master/CHANGELOG.md)
+   * [Changelog](https://github.com/sadrasabouri/pyrandwalk/blob/master/CHANGELOG.md)
    * [License](https://github.com/sadrasabouri/pyrandwalk/blob/master/LICENSE)
 
 ## Overview
