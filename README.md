@@ -58,7 +58,7 @@ Random walk is a representation of discrete-time, discrete-value Markov chain mo
 ## Installation
 
 ### Source code
-- Download [Version 0.1](https://github.com/sadrasabouri/pyrandwalk/archive/v0.1.zip) or [Latest Source ](https://github.com/sadrasabouri/pyrandwalk/archive/dev.zip)
+- Download [Version 0.09](https://github.com/sadrasabouri/pyrandwalk/archive/v0.09.zip) or [Latest Source ](https://github.com/sadrasabouri/pyrandwalk/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)
 
