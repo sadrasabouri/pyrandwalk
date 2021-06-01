@@ -34,6 +34,10 @@ Random walk is a representation of discrete-time, discrete-value Markov chain mo
 
 <table>
 	<tr>
+		<td align="center">PyPI Counter</td>
+		<td align="center"><a href="http://pepy.tech/count/pyrandwalk"><img src="http://pepy.tech/badge/pyrandwalk"></a></td>
+	</tr>
+	<tr>
 		<td align="center">Github Stars</td>
 		<td align="center"><a href="https://github.com/sadrasabouri/pyrandwalk"><img src="https://img.shields.io/github/stars/sadrasabouri/pyrandwalk.svg?style=social&label=Stars"></a></td>
 	</tr>
