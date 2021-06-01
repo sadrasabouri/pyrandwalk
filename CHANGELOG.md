@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - codefactor tests
 - pypi installing guid
+- `Document.ipynb`
+- `Examples.ipynb`
 ## [0.09] - 2021-05-16
 ### Added
 - `RandomWalk` class
