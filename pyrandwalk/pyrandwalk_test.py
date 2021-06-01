@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-"""Basic test file."""
 """
 >>> from pyrandwalk import *
 >>> import numpy as np
