@@ -11,17 +11,12 @@
 <a href="https://codecov.io/gh/sadrasabouri/pyrandwalk">
   <img src="https://codecov.io/gh/sadrasabouri/pyrandwalk/branch/master/graph/badge.svg" />
 </a>
-</div>
-
-----------
-
 <a href="https://colab.research.google.com/github/sadrasabouri/pyrandwalk/blob/master/Document/Document.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Document"/>
 </a>
-<a href="https://colab.research.google.com/github/sadrasabouri/pyrandwalk/blob/master/Document/Examples.ipynb">
-  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Examples"/>
-</a>
+</div>
 
+----------
 ## Table of contents					
    * [Overview](https://github.com/sadrasabouri/pyrandwalk#overview)
    * [Installation](https://github.com/sadrasabouri/pyrandwalk#installation)
