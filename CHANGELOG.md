@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - pypi installing guid
 - `Document.ipynb`
 - `Examples.ipynb`
+- `notebook_check.py`
 ## [0.09] - 2021-05-16
 ### Added
 - `RandomWalk` class

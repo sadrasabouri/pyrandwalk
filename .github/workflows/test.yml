@@ -39,6 +39,10 @@ jobs:
       run: |
         python -m pytest --ignore-glob="*plot_test.py" Test --cov=pyrandwalk --cov-report=term
       if: matrix.python-version == 3.5
+    - name: Notebook check
+      run: |
+        python Otherfiles/notebook_check.py
+      if: matrix.python-version == 3.7 && matrix.os == 'ubuntu-latest'
     - name: Other tests
       run: |
           python -m vulture pyrandwalk/ Otherfiles/ --min-confidence 65 --exclude=__init__.py --sort-by-size
