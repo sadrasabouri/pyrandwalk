@@ -67,6 +67,11 @@ Random walk is a representation of discrete-time, discrete-value Markov chain mo
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)
 
+### PyPI
+
+- Check [Python Packaging User Guide](https://packaging.python.org/installing/)
+- Run `pip install pyrandwalk` or `pip3 install pyrandwalk` (Need root access)
+
 
 ## Usage
 
