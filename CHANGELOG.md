@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `payoff` attribute
 - `cost` attribute
 - `discount` attribute
+- `best_policy` method
 ### Changes
 - `make_prob_dist` bug fixed
 - `final_dist` bug fixed

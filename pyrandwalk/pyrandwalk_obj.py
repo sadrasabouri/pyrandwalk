@@ -21,7 +21,13 @@ class RandomWalk():
     >>> rw = RandomWalk(states, trans)
     """
 
-    def __init__(self, states, transitions, payoff=None, cost=0, discount=1):
+    def __init__(
+            self,
+            states,
+            transitions,
+            payoff=None,
+            cost=None,
+            discount=1):
         """
         Init method.
 
@@ -31,8 +37,8 @@ class RandomWalk():
         :type transitions: np.array
         :param payoff: list of payoff values for each state
         :type payoff: list or np.array
-        :param cost: cost of each step
-        :type cost: float
+        :param cost: cost of each state
+        :type cost: list or np.array
         :param discount: discount which will be applied in each step
         :type discount: float
         """
@@ -50,7 +56,9 @@ class RandomWalk():
         self.P = np.array(transitions)
         if payoff is None:
             payoff = [0] * len(states)
-        self.f, self.g, self.gamma = payoff, cost, discount
+        if cost is None:
+            cost = [0] * len(states)
+        self.f, self.g, self.gamma = np.array(payoff), np.array(cost), discount
 
     def prob_sec(self, sequence, initial_dist=None):
         """
@@ -205,3 +213,34 @@ class RandomWalk():
             else:
                 class_dict['transient'] = (class_, sub_trans)
         return class_dict
+
+    def best_policy(self, stop_states=None, MIN_DIFF=10**(-4)):
+        """
+        Seperate states into 2 sections continue and stop.
+
+        :param stop_states: states in which we should stop.
+        :type stop_states: list or np.array
+        :param MIN_DIFF: minimum difference for updates
+        :type MIN_DIFF: float
+        :return: dictionary of lists showing each section's state(s)
+        """
+        if stop_states is None:
+            states = np.array(self.S)
+            stop_states = states[np.argwhere(states == 0)]
+        max_f = np.max(self.f)
+        v = [self.f[i] if self.S[i]
+             in stop_states else max_f for i in range(len(self.S))]
+        v = np.array(v)
+        diff = np.inf
+        while(diff > MIN_DIFF):
+            continue_price = self.gamma * np.matmul(self.P, v) - self.g
+            new_v = np.maximum(continue_price, self.f)
+            diff = np.sum(np.abs(new_v - v))
+            v = new_v
+        policy = {"continue": [], "stop": []}
+        for i, state in enumerate(self.S):
+            if state in stop_states or v[i] == self.f[i]:
+                policy["stop"].append(state)
+            else:
+                policy["continue"].append(state)
+        return policy
