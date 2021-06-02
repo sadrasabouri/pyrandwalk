@@ -116,4 +116,11 @@ False
 >>> rw = RandomWalk(states, trans)
 >>> rw.final_dist()
 array([0.37878788, 0.25757576, 0.36363636])
+>>> states = [1, 2, 3]
+>>> trans = np.array([[0.2, 0.4, 0.4],
+...                   [0.1, 0.5, 0.4],
+...                   [0.6, 0.3, 0.1]])
+>>> rw = RandomWalk(states, trans)
+>>> rw.final_dist()
+array([0.28205128, 0.41025641, 0.30769231])
 """

@@ -11,7 +11,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `Document.ipynb`
 - `Examples.ipynb`
 - `notebook_check.py`
+- `precision` added to `is_prob_dist`
 ### Changes
+- `make_prob_dist` bug fixed
 - `final_dist` bug fixed
 ## [0.09] - 2021-05-16
 ### Added
