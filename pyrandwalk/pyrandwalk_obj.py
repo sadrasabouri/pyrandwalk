@@ -32,7 +32,9 @@ class RandomWalk():
         :param payoff: list of payoff values for each state
         :type payoff: list or np.array
         :param cost: cost of each step
-        :
+        :type cost: float
+        :param discount: discount which will be applied in each step
+        :type discount: float
         """
         if not is_valid_vector_type(states):
             raise pyrandwalkStateError(INVALID_STATE_TYPE_ERROR)
@@ -46,6 +48,8 @@ class RandomWalk():
                 raise pyrandwalkTransitionsError(
                     TRANSITIONS_ROW_PROBABILITY_ERROR.format(i, row))
         self.P = np.array(transitions)
+        if payoff is None:
+            payoff = [0] * len(states)
 
     def prob_sec(self, sequence, initial_dist=None):
         """

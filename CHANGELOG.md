@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `Examples.ipynb`
 - `notebook_check.py`
 - `precision` added to `is_prob_dist`
+- `payoff` attribute
+- `cost` attribute
+- `discount` attribute
 ### Changes
 - `make_prob_dist` bug fixed
 - `final_dist` bug fixed
