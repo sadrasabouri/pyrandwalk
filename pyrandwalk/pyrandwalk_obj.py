@@ -50,6 +50,7 @@ class RandomWalk():
         self.P = np.array(transitions)
         if payoff is None:
             payoff = [0] * len(states)
+        self.f, self.g, self.gamma = payoff, cost, discount
 
     def prob_sec(self, sequence, initial_dist=None):
         """
