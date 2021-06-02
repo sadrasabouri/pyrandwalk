@@ -21,7 +21,7 @@ class RandomWalk():
     >>> rw = RandomWalk(states, trans)
     """
 
-    def __init__(self, states, transitions):
+    def __init__(self, states, transitions, payoff=None, cost=0, discount=1):
         """
         Init method.
 
@@ -29,6 +29,10 @@ class RandomWalk():
         :type states: list or np.array
         :param transitions: matrix of transitions
         :type transitions: np.array
+        :param payoff: list of payoff values for each state
+        :type payoff: list or np.array
+        :param cost: cost of each step
+        :
         """
         if not is_valid_vector_type(states):
             raise pyrandwalkStateError(INVALID_STATE_TYPE_ERROR)
@@ -98,7 +102,7 @@ class RandomWalk():
         :return: final distribution as np.array
         """
         v, Q = la.eig(self.P.T)
-        final_probs = Q[:, np.argmin(np.abs(v-1))]
+        final_probs = Q[:, np.argmin(np.abs(v - 1))]
         final_probs = np.squeeze(final_probs.T)
         return make_prob_dist(final_probs, precision=precision)
 
