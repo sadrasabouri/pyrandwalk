@@ -109,4 +109,11 @@ True
 True
 >>> is_valid_vector_type(1)
 False
+>>> states = [1, 2, 3]
+>>> trans = np.array([[0.4, 0.2, 0.4],
+...                   [0.6,  0 , 0.4],
+...                   [0.2, 0.5, 0.3]])
+>>> rw = RandomWalk(states, trans)
+>>> rw.final_dist()
+array([0.37878788, 0.25757576, 0.36363636])
 """

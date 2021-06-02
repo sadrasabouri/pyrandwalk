@@ -98,7 +98,7 @@ class RandomWalk():
         :return: final distribution as np.array
         """
         v, Q = la.eig(self.P.T)
-        final_probs = Q[:, np.argwhere(v==1)]
+        final_probs = Q[:, np.argmin(np.abs(v-1))]
         final_probs = np.squeeze(final_probs.T)
         return make_prob_dist(final_probs, precision=precision)
 
