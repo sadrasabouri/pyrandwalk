@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [1.0] - 2021-06-09
 ### Added
 - codefactor tests
-- pypi installing guid
+- pypi installation guide
 - `Document.ipynb`
 - `Examples.ipynb`
 - `notebook_check.py`
@@ -34,5 +34,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `get_typeof_classes` method
 - `README.md`
 
-[Unreleased]: https://github.com/sadrasabouri/pyrandwalk/compare/v1...dev
+[Unreleased]: https://github.com/sadrasabouri/pyrandwalk/compare/v1.0...dev
 [1.0]: https://github.com/sepandhaghighi/pycm/compare/v1.0...v0.09
