@@ -266,6 +266,6 @@ For making the best policy problems for your random walk you can easily:
 
 ## References			
 
-<blockquote>1- Gregory F.Lawler, "Introduction to Stochastic Processes".</blockquote>
-<blockquote>2- [Markusfeng](https://markusfeng.com/projects/graph/), "Graph / Finite State Machine Designer".</blockquote>
+<blockquote>1- Lawler, Gregory F. Introduction to stochastic processes. Chapman and Hall/CRC, 2018.</blockquote>
+<blockquote>2- <a href="https://markusfeng.com/projects/graph/">Markusfeng</a></blockquote>
 <div>Icon made by <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
