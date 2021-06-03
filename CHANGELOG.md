@@ -35,4 +35,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `README.md`
 
 [Unreleased]: https://github.com/sadrasabouri/pyrandwalk/compare/v1.0...dev
-[1.0]: https://github.com/sepandhaghighi/pycm/compare/v1.0...v0.09
+[1.0]: https://github.com/sadrasabouri/pyrandwalk/compare/v0.09...v1.0
+[0.09]: https://github.com/sadrasabouri/pyrandwalk/compare/9113e4c...v0.09
