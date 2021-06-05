@@ -113,10 +113,8 @@ array([0.28205128, 0.41025641, 0.30769231])
 [0, 2]
 >>> policy['continue']
 [1]
->>> states = [0, 1, 2]
->>> trans = np.array([[1, 0, 0], [1/2, 0, 1/2], [0, 1, 0]])
->>> rw = RandomWalk(states, trans, payoff=[0, 1, 4], cost=[1, 0, 2], discount=0.5)
->>> policy = rw.best_policy(stop_states=[0])
+>>> rw = RandomWalk(states, trans, payoff=[0, 1, 4], cost=[1, 3, 4], discount=0.1)
+>>> policy = rw.best_policy()
 >>> policy['stop']
 [0, 1, 2]
 >>> policy['continue']

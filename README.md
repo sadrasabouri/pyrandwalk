@@ -259,7 +259,7 @@ For making the best policy problems for your random walk you can easily:
 >>> states = [0, 1, 2]
 >>> trans = np.array([[1, 0, 0], [1/2, 0, 1/2], [0, 1, 0]])
 >>> rw = RandomWalk(states, trans, payoff=[0, 1, 4], cost=[1, 0, 2], discount=0.5)
->>> rw.best_policy(stop_states=[0])
+>>> rw.best_policy()
 {'continue': [], 'stop': [0, 1, 2]}
 ```
 
