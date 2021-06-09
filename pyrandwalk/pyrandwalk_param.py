@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Parameters and constants."""
-PYRANDWALK_VERSION = "0.09"
+PYRANDWALK_VERSION = "1.0"
 
 RUN_PRINT = "{0} --> {1}  (p = {2:.3f})"
 

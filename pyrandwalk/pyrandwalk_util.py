@@ -3,7 +3,7 @@
 import numpy as np
 
 
-def make_prob_dist(freq, precision=10 * (-10)):
+def make_prob_dist(freq, precision=10**(-10)):
     """
     Return a fine probability distribution based on given frequencies of states.
 
@@ -21,7 +21,7 @@ def make_prob_dist(freq, precision=10 * (-10)):
     return final_dist
 
 
-def is_prob_dist(dist):
+def is_prob_dist(dist, precision=10**(-10)):
     """
     Check if given array is a probability distribution.
 
@@ -32,7 +32,7 @@ def is_prob_dist(dist):
     dist = np.array(dist)
     if np.sum(dist < 0) != 0:
         return False
-    if np.sum(dist) != 1:
+    if np.abs(np.sum(dist) - 1) > precision:
         return False
     return True
 

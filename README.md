@@ -4,11 +4,15 @@
 <div align="center">
 <img src="https://github.com/sadrasabouri/pyrandwalk/raw/master/Otherfiles/logo.png" width="300" height="300" alt="pyrandwalk-logo"><br/>
 <br/>
-<h1>:walking:Python Library for Random Walks.</h1>
+<h1>:walking: Python Library for Random Walks</h1>
 
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3" /></a>
+<a href="https://www.codefactor.io/repository/github/sadrasabouri/pyrandwalk/overview/master"><img src="https://www.codefactor.io/repository/github/sadrasabouri/pyrandwalk/badge/master" alt="CodeFactor" /></a>
 <a href="https://codecov.io/gh/sadrasabouri/pyrandwalk">
   <img src="https://codecov.io/gh/sadrasabouri/pyrandwalk/branch/master/graph/badge.svg" />
+</a>
+<a href="https://colab.research.google.com/github/sadrasabouri/pyrandwalk/blob/master/Document/Document.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Document"/>
 </a>
 </div>
 
@@ -32,6 +36,10 @@ Random walk is a representation of discrete-time, discrete-value Markov chain mo
 
 
 <table>
+	<tr>
+		<td align="center">PyPI Counter</td>
+		<td align="center"><a href="http://pepy.tech/count/pyrandwalk"><img src="http://pepy.tech/badge/pyrandwalk"></a></td>
+	</tr>
 	<tr>
 		<td align="center">Github Stars</td>
 		<td align="center"><a href="https://github.com/sadrasabouri/pyrandwalk"><img src="https://img.shields.io/github/stars/sadrasabouri/pyrandwalk.svg?style=social&label=Stars"></a></td>
@@ -58,9 +66,14 @@ Random walk is a representation of discrete-time, discrete-value Markov chain mo
 ## Installation
 
 ### Source code
-- Download [Version 0.09](https://github.com/sadrasabouri/pyrandwalk/archive/v0.09.zip) or [Latest Source ](https://github.com/sadrasabouri/pyrandwalk/archive/dev.zip)
+- Download [Version 1.0](https://github.com/sadrasabouri/pyrandwalk/archive/v1.0.zip) or [Latest Source ](https://github.com/sadrasabouri/pyrandwalk/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)
+
+### PyPI
+
+- Check [Python Packaging User Guide](https://packaging.python.org/installing/)
+- Run `pip install pyrandwalk` or `pip3 install pyrandwalk` (Need root access)
 
 
 ## Usage
@@ -238,8 +251,21 @@ array([[0.  , 0.75, 0.  , 0.  ],
 ```
 
 
+### The Best Policy Problems
+
+For making the best policy problems for your random walk you can easily:
+
+```pycon
+>>> states = [0, 1, 2]
+>>> trans = np.array([[1, 0, 0], [1/2, 0, 1/2], [0, 1, 0]])
+>>> rw = RandomWalk(states, trans, payoff=[0, 1, 4], cost=[1, 0, 2], discount=0.5)
+>>> rw.best_policy()
+{'continue': [], 'stop': [0, 1, 2]}
+```
+
+
 ## References			
 
-<blockquote>1- Gregory F.Lawler, "Introduction to Stochastic Processes".</blockquote>
-<blockquote>2- [Markusfeng](https://markusfeng.com/projects/graph/), "Graph / Finite State Machine Designer".</blockquote>
+<blockquote>1- Lawler, Gregory F. Introduction to stochastic processes. Chapman and Hall/CRC, 2018.</blockquote>
+<blockquote>2- <a href="https://markusfeng.com/projects/graph/">Markusfeng</a></blockquote>
 <div>Icon made by <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>

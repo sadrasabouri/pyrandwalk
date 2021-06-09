@@ -21,7 +21,13 @@ class RandomWalk():
     >>> rw = RandomWalk(states, trans)
     """
 
-    def __init__(self, states, transitions):
+    def __init__(
+            self,
+            states,
+            transitions,
+            payoff=None,
+            cost=None,
+            discount=1):
         """
         Init method.
 
@@ -29,6 +35,12 @@ class RandomWalk():
         :type states: list or np.array
         :param transitions: matrix of transitions
         :type transitions: np.array
+        :param payoff: list of payoff values for each state
+        :type payoff: list or np.array
+        :param cost: cost of each state
+        :type cost: list or np.array
+        :param discount: discount which will be applied in each step
+        :type discount: float
         """
         if not is_valid_vector_type(states):
             raise pyrandwalkStateError(INVALID_STATE_TYPE_ERROR)
@@ -42,6 +54,11 @@ class RandomWalk():
                 raise pyrandwalkTransitionsError(
                     TRANSITIONS_ROW_PROBABILITY_ERROR.format(i, row))
         self.P = np.array(transitions)
+        if payoff is None:
+            payoff = [0] * len(states)
+        if cost is None:
+            cost = [0] * len(states)
+        self.f, self.g, self.gamma = np.array(payoff), np.array(cost), discount
 
     def prob_sec(self, sequence, initial_dist=None):
         """
@@ -98,7 +115,7 @@ class RandomWalk():
         :return: final distribution as np.array
         """
         v, Q = la.eig(self.P.T)
-        final_probs = Q[:, np.argwhere(v==1)]
+        final_probs = Q[:, np.argmin(np.abs(v - 1))]
         final_probs = np.squeeze(final_probs.T)
         return make_prob_dist(final_probs, precision=precision)
 
@@ -196,3 +213,34 @@ class RandomWalk():
             else:
                 class_dict['transient'] = (class_, sub_trans)
         return class_dict
+
+    def best_policy(self, MIN_DIFF=10**(-4)):
+        """
+        Seperate states into 2 sections continue and stop.
+
+        :param MIN_DIFF: minimum difference for updates
+        :type MIN_DIFF: float
+        :return: dictionary of lists showing each section's state(s)
+        """
+        stop_states = []
+        for i, state in enumerate(self.S):
+            if self.P[i,i] == 1:
+                stop_states.append(state)
+        max_f = np.max(self.f)
+        v = [self.f[i] if self.S[i]
+             in stop_states else max_f for i in range(len(self.S))]
+        v, diff = np.array(v), np.inf
+        while(diff > MIN_DIFF):
+            u = self.gamma * np.matmul(self.P, v) - self.g
+            new_v = np.maximum(u, self.f)
+            diff = np.sum(np.abs(new_v - v))
+            v = new_v
+        policy = {"continue": [], "stop": []}
+        for i, state in enumerate(self.S):
+            if state in stop_states:
+                policy["stop"].append(state)
+            elif v[i] > self.f[i]:
+                policy["continue"].append(state)
+            else:
+                policy["stop"].append(state)
+        return policy

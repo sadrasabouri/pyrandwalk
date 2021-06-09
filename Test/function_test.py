@@ -86,6 +86,39 @@ array([[0.  , 0.75, 0.  , 0.  ],
        [0.25, 0.  , 0.75, 0.  ],
        [0.  , 0.25, 0.  , 0.75],
        [0.  , 0.  , 1.  , 0.  ]])
+>>> policy = rw.best_policy()
+>>> policy['stop']
+[0, 1, 2, 3, 4]
+>>> policy['continue']
+[]
+>>> states = [1, 2, 3]
+>>> trans = np.array([[0.4, 0.2, 0.4],
+...                   [0.6,  0 , 0.4],
+...                   [0.2, 0.5, 0.3]])
+>>> rw = RandomWalk(states, trans)
+>>> rw.final_dist()
+array([0.37878788, 0.25757576, 0.36363636])
+>>> states = [1, 2, 3]
+>>> trans = np.array([[0.2, 0.4, 0.4],
+...                   [0.1, 0.5, 0.4],
+...                   [0.6, 0.3, 0.1]])
+>>> rw = RandomWalk(states, trans)
+>>> rw.final_dist()
+array([0.28205128, 0.41025641, 0.30769231])
+>>> states = [0, 1, 2]
+>>> trans = np.array([[1, 0, 0], [1/2, 0, 1/2], [0, 1, 0]])
+>>> rw = RandomWalk(states, trans, payoff=[0, 1, 4])
+>>> policy = rw.best_policy()
+>>> policy['stop']
+[0, 2]
+>>> policy['continue']
+[1]
+>>> rw = RandomWalk(states, trans, payoff=[0, 1, 4], cost=[1, 3, 4], discount=0.1)
+>>> policy = rw.best_policy()
+>>> policy['stop']
+[0, 1, 2]
+>>> policy['continue']
+[]
 >>> from pyrandwalk.pyrandwalk_util import *
 >>> make_prob_dist([1, 2, 2])
 array([0.2, 0.4, 0.4])
