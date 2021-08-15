@@ -30,8 +30,7 @@
 ## Overview
 
 <p align="justify">	
-Pyrandwalk is a tool for simulating random walks, calculate the probability of given state sequences and etc.
-Random walk is a representation of discrete-time, discrete-value Markov chain model using in stochastic processes.
+Pyrandwalk is an educational tool for simulating random walks, calculating the probability of given state sequences, etc. Random walk is a representation of the discrete-time, discrete-value Markov chain model used in stochastic processes.
 </p>
 
 
