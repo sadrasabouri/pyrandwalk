@@ -30,6 +30,6 @@ There are classes of problems in which occurrences did not deterministically hap
 
 These types of problems are not only used in pure mathematics but also in many nowadays hot topics like Reinforcement Learning, Bigram Language Models, etc. Because understanding the mathematics behind the random walks and Markov chains needs good knowledge in statistics and probability and most of the new learners can not enter into these fields we decided to solve this issue by developing a Python library which gives a simple intuition about these rather hard problems called PyRandWalk.
 
-<img src="pyrandwalk-logo.png" alt="PyRandwalk Logo" width="200" height="200"/>
+![PyRandwalk Logo](pyrandwalk-logo.png)
 
 # References
