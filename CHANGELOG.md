@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - all input state type support
+### Changes
+- `make_prob_dist` output is now always real
 ## [1.0] - 2021-06-09
 ### Added
 - codefactor tests
