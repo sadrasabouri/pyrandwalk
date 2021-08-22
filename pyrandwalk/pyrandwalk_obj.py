@@ -97,8 +97,10 @@ class RandomWalk():
         states = [state]
         probabilities = [1 / len(self.S)]
         for i in range(ntimes):
-            next_state = np.random.choice(self.S, p=self.P[state])
-            probability = self.P[state, next_state]
+            state_idx = self.S.index(state)
+            next_state = np.random.choice(self.S, p=self.P[state_idx])
+            next_state_idx = self.S.index(next_state)
+            probability = self.P[state_idx, next_state_idx]
             states.append(next_state)
             probabilities.append(probability)
             if show is True:
