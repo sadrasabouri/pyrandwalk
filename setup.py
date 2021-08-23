@@ -30,14 +30,14 @@ def read_description():
 setup(
     name='pyrandwalk',
     packages=['pyrandwalk'],
-    version='1.0',
+    version='1.1',
     description='Python Library for Random Walks',
     long_description=read_description(),
     long_description_content_type='text/markdown',
     author='Sadra Sabouri',
     author_email='sabouri.sadra@gmail.com',
     url='https://github.com/sadrasabouri/pyrandwalk',
-    download_url='https://github.com/sadrasabouri/pyrandwalk/tarball/v1.0',
+    download_url='https://github.com/sadrasabouri/pyrandwalk/tarball/v1.1',
     keywords="random-walk markov-chain stochastic-processes",
     project_urls={
         'Source': 'https://github.com/sadrasabouri/pyrandwalk',
@@ -45,7 +45,7 @@ setup(
     install_requires=get_requires(),
     python_requires='>=3.5',
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'Natural Language :: English',
         'License :: OSI Approved :: MIT License',
