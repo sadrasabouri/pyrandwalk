@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - new examples
+- `paper.bib`
+- `paper.md`
 ## [1.0] - 2021-06-09
 ### Added
 - codefactor tests
