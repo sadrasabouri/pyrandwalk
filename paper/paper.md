@@ -24,7 +24,7 @@ bibliography: paper.bib
 
 Pyrandwalk is an educational tool for simulating random walks, calculating the probability of given state sequences, etc. Random walk is a representation of the discrete-time, discrete-value Markov chain model used in stochastic processes.
 
-This paper format is inherited from Pyrgg.[@Haghighi2017]
+The first idea of this paper is inherited from Pyrgg.[@Haghighi2017]
 
 # Statement of need
 
