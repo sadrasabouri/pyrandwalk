@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
+- all input `state` type support
+### Changes
+- `make_prob_dist` modified
 - new examples
 - `paper.bib`
 - `paper.md`

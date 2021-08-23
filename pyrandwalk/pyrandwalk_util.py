@@ -18,7 +18,7 @@ def make_prob_dist(freq, precision=10**(-10)):
     zero_probe_idx = final_dist < precision
     final_dist[zero_probe_idx] = 0
     final_dist = final_dist / np.sum(final_dist)
-    return final_dist
+    return np.real(final_dist)
 
 
 def is_prob_dist(dist, precision=10**(-10)):
