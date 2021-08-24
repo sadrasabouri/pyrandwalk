@@ -8,11 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [1.1] - 2021-08-26
 ### Added
 - all input `state` type support
-### Changes
-- `make_prob_dist` modified
 - new examples
 - `paper.bib`
 - `paper.md`
+### Changes
+- `make_prob_dist` modified
 ## [1.0] - 2021-06-09
 ### Added
 - codefactor tests
