@@ -119,6 +119,32 @@ array([0.28205128, 0.41025641, 0.30769231])
 [0, 1, 2]
 >>> policy['continue']
 []
+>>> np.random.seed(0)
+>>> states = ['I', 'eat', 'food']
+>>> trans = np.array([[0.1, 0.8, 0.1], [0.15, 0.05, 0.8], [0.8, 0.15, 0.05]])
+>>> rw = RandomWalk(states, trans)
+>>> states, probs = rw.run(show=True)
+I --> eat  (p = 0.800)
+eat --> food  (p = 0.800)
+food --> eat  (p = 0.150)
+eat --> food  (p = 0.800)
+food --> I  (p = 0.800)
+I --> eat  (p = 0.800)
+eat --> food  (p = 0.800)
+food --> I  (p = 0.800)
+I --> eat  (p = 0.800)
+eat --> food  (p = 0.800)
+>>> states
+['I', 'eat', 'food', 'eat', 'food', 'I', 'eat', 'food', 'I', 'eat', 'food']
+>>> probs
+[0.3333333333333333, 0.8, 0.8, 0.15, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8]
+>>> rw.final_dist()
+array([0.34133043, 0.33805889, 0.32061069])
+>>> policy = rw.best_policy()
+>>> policy['stop']
+['I', 'eat', 'food']
+>>> policy['continue']
+[]
 >>> from pyrandwalk.pyrandwalk_util import *
 >>> make_prob_dist([1, 2, 2])
 array([0.2, 0.4, 0.4])

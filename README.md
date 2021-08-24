@@ -30,8 +30,7 @@
 ## Overview
 
 <p align="justify">	
-Pyrandwalk is a tool for simulating random walks, calculate the probability of given state sequences and etc.
-Random walk is a representation of discrete-time, discrete-value Markov chain model using in stochastic processes.
+Pyrandwalk is an educational tool for simulating random walks, calculating the probability of given state sequences, etc. Random walk is a representation of the discrete-time, discrete-value Markov chain model used in stochastic processes.
 </p>
 
 
@@ -66,7 +65,7 @@ Random walk is a representation of discrete-time, discrete-value Markov chain mo
 ## Installation
 
 ### Source code
-- Download [Version 1.0](https://github.com/sadrasabouri/pyrandwalk/archive/v1.0.zip) or [Latest Source ](https://github.com/sadrasabouri/pyrandwalk/archive/dev.zip)
+- Download [Version 1.1](https://github.com/sadrasabouri/pyrandwalk/archive/v1.1.zip) or [Latest Source ](https://github.com/sadrasabouri/pyrandwalk/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)
 
