@@ -7,8 +7,6 @@ import numpy as np
 from numpy import linalg as la
 import networkx as nx
 
-np.random.seed(seed=42)
-
 
 class RandomWalk():
     """
@@ -104,8 +102,6 @@ class RandomWalk():
         states = [state]
         probabilities = [1 / len(self.S)]
         for i in range(ntimes):
-            # TODO: change how index of the state is found based on
-            # the data type of the `states` vector
             state_idx = self.S.index(state)
             next_state = np.random.choice(self.S, p=self.P[state_idx])
             next_state_idx = self.S.index(next_state)
