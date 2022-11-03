@@ -7,6 +7,8 @@ import numpy as np
 from numpy import linalg as la
 import networkx as nx
 
+np.random.seed(seed=42)
+
 
 class RandomWalk():
     """
@@ -84,30 +86,27 @@ class RandomWalk():
             current_state = next_state
         return probability
 
-    def run(self, ntimes:int=10, show:bool=False, starting_state:int=None):
+    def run(self, ntimes=10, show=False, starting_state=None):
         """
         Run random walk for ntimes and print out result on each transition.
 
         :param ntimes: numbers of running
         :type ntimes: int
         :param show: flag which is set when showing run is desired
-        :starting_state: the state from which the randon walk should start from
+        :param starting_state: the state from which the randon walk should start from
         :return: (generated_states, probability)
         """
-        if starting_state == None:
-            state = np.random.choice(self.S)
-        else:
+        
+        state = np.random.choice(self.S)
+        if starting_state != None:
             state = starting_state
             
         states = [state]
         probabilities = [1 / len(self.S)]
         for i in range(ntimes):
-            try:
-                state_idx = self.S.index(state)
-            except Exception as e:
-                print("The following error occured:")
-                print(e)
-                print("*HINT*: Make sure <states> is a List or an iterable object with indecies")
+            # TODO: change how index of the state is found based on
+            # the data type of the `states` vector
+            state_idx = self.S.index(state)
             next_state = np.random.choice(self.S, p=self.P[state_idx])
             next_state_idx = self.S.index(next_state)
             probability = self.P[state_idx, next_state_idx]
