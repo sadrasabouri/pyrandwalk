@@ -109,7 +109,7 @@ Initial probability distribution is assumed to be uniform by default but you can
 ```
 
 
-### Run a random walk (without a specified initial state)
+### Run a random walk
 
 You can start a random walk at an arbitrary state on a given markov chain and see the result:
 
@@ -171,7 +171,7 @@ And if you want to see what's going on down there during the simulation you can 
 [0.2, 0.75, 0.75, 0.75, 1.0, 0.75, 1.0, 0.75, 1.0, 0.75, 1.0, 0.75, 1.0, 0.75, 1.0, 0.25, 0.25, 0.75, 0.75, 0.75, 1.0, 0.75, 1.0, 0.75, 1.0, 0.75, 1.0, 0.75, 1.0, 0.25, 0.75]
 ```
 
-### Run a random walk with an initial state
+#### Start from an initial state
 
 You can also simluate a random walk that starts at a particular state by specifying a value for the `starting_state` argument, for example:
 
