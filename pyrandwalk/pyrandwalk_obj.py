@@ -195,7 +195,7 @@ class RandomWalk():
         import matplotlib.pyplot as plt
         colormap = self.get_colormap()
         fig, ax = plt.subplots()
-        fig.canvas.set_window_title(suptitle)
+        fig.suptitle(suptitle)
         ax.set_title(title)
         nx.draw_circular(self.get_graph(),
                          node_color=colormap,
