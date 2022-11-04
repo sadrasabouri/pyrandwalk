@@ -92,6 +92,7 @@ class RandomWalk():
         :type ntimes: int
         :param show: flag which is set when showing run is desired
         :param starting_state: the state from which the randon walk should start from
+        :type starting_state: Any
         :return: (generated_states, probability)
         """
         
