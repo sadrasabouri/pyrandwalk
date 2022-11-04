@@ -84,16 +84,22 @@ class RandomWalk():
             current_state = next_state
         return probability
 
-    def run(self, ntimes=10, show=False):
+    def run(self, ntimes=10, show=False, starting_state=None):
         """
         Run random walk for ntimes and print out result on each transition.
 
         :param ntimes: numbers of running
         :type ntimes: int
         :param show: flag which is set when showing run is desired
+        :param starting_state: the state from which the randon walk should start from
+        :type starting_state: Any
         :return: (generated_states, probability)
         """
+        
         state = np.random.choice(self.S)
+        if starting_state != None:
+            state = starting_state
+            
         states = [state]
         probabilities = [1 / len(self.S)]
         for i in range(ntimes):

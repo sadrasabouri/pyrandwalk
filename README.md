@@ -111,7 +111,7 @@ Initial probability distribution is assumed to be uniform by default but you can
 
 ### Run a random walk
 
-You can start a random walk on given markov chain and see the result:
+You can start a random walk at an arbitrary state on a given markov chain and see the result:
 
 ```pycon
 >>> states, probs = rw.run()
@@ -171,6 +171,28 @@ And if you want to see what's going on down there during the simulation you can 
 [0.2, 0.75, 0.75, 0.75, 1.0, 0.75, 1.0, 0.75, 1.0, 0.75, 1.0, 0.75, 1.0, 0.75, 1.0, 0.25, 0.25, 0.75, 0.75, 0.75, 1.0, 0.75, 1.0, 0.75, 1.0, 0.75, 1.0, 0.75, 1.0, 0.25, 0.75]
 ```
 
+#### Start from an initial state
+
+You can also simluate a random walk that starts at a particular state by specifying a value for the `starting_state` argument, for example:
+
+```pycon
+>>> states, probs = rw.run(ntimes=10, show=True, starting_state=4)
+4 --> 3  (p = 1.000)
+3 --> 2  (p = 0.250)
+2 --> 3  (p = 0.750)
+3 --> 4  (p = 0.750)
+4 --> 3  (p = 1.000)
+3 --> 4  (p = 0.750)
+4 --> 3  (p = 1.000)
+3 --> 4  (p = 0.750)
+4 --> 3  (p = 1.000)
+3 --> 2  (p = 0.250)
+
+>>> states
+[4, 3, 2, 3, 4, 3, 4, 3, 4, 3, 2]
+>>> probs
+[0.2, 1.0, 0.25, 0.75, 0.75, 1.0, 0.75, 1.0, 0.75, 1.0, 0.25]
+```
 
 ### Final Probability Distribution
 
