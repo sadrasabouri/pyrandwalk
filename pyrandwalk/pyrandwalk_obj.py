@@ -95,7 +95,6 @@ class RandomWalk():
         :type starting_state: Any
         :return: (generated_states, probability)
         """
-        
         state = np.random.choice(self.S)
         if starting_state != None:
             state = starting_state
