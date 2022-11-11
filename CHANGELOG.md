@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Changes
+- test bugs fixed
 - `starting_state` added to `run` method
 ## [1.1] - 2021-08-25
 ### Added
